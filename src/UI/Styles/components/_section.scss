@@ -1,0 +1,31 @@
+.section {
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 64px;
+  &--about-me {
+    max-width: 512px;
+    margin: 0 auto;
+    padding: 0 16px 64px 16px;
+    text-align: center;
+  }
+  &--skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  &__title {
+    color: $color-secondary;
+  }
+  &__subtitle {}
+  &__text {
+    color: $color-primary;
+  }
+  &__list {}
+  &__list-item {}
+  &__component {
+    &--about-me {}
+    &--skill {}
+    &--project {}
+  }
+}
+
