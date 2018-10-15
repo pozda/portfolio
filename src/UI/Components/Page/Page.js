@@ -92,7 +92,7 @@ class Page extends React.Component<State, any> {
 
                     <div className="container">
                         <section className="section section--about-me" id="aboutMe" ref={(section) => {
-                            this.AboutMe = section;
+                            this.AboutMe = section; //TODO: this is temporary, implement react-scroll
                         }}>
                             {aboutMe.map((about: AboutMe) => (
                                 <AboutMeComponent about={about} key={about.title} image={about.image}
@@ -101,7 +101,7 @@ class Page extends React.Component<State, any> {
                         </section>
 
                         <section className="section section--skills" id="skills" ref={(section) => {
-                            this.Skills = section;
+                            this.Skills = section; //TODO: this is temporary, implement react-scroll
                         }}>
                             {skills.map((skill: Skill) => (
                                 <SkillComponent skill={skill} key={skill.name + skill.level}/>
@@ -109,7 +109,7 @@ class Page extends React.Component<State, any> {
                         </section>
 
                         <section className="section projects" id="projects" ref={(section) => {
-                            this.Projects = section;
+                            this.Projects = section; //TODO: this is temporary, implement react-scroll
                         }}
                                  style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
                             {projects.map((project: Project) => (
