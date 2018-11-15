@@ -4,7 +4,7 @@ import Butter from 'buttercms'
 const butter = Butter(process.env.REACT_APP_BUTTERCMS_KEY)
 
 const getAboutMe = butter.content.retrieve(["aboutMe"])
-const getSkills = butter.content.retrieve(["skills"])
+const getToolbox = butter.content.retrieve(["toolbox"])
 const getProjects = butter.content.retrieve(["projects"])
 const getSocialLinks = butter.content.retrieve(["socialLinks"])
 const getGetInTouch = butter.content.retrieve(["getInTouch"])
@@ -13,7 +13,7 @@ const getGetInTouch = butter.content.retrieve(["getInTouch"])
 
 export {
   getAboutMe,
-  getSkills,
+  getToolbox,
   getProjects,
   getSocialLinks,
   getGetInTouch

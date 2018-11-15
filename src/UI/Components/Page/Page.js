@@ -2,28 +2,29 @@
 import * as React from 'react'
 import {
     getAboutMe,
-    getSkills,
+    getToolbox,
     getProjects,
     getSocialLinks,
     getGetInTouch,
 } from '../../../Requests/Requests'
 import type {AboutMe} from '../../../Models/AboutMe'
-import type {Skill} from '../../../Models/Skill'
+import type {Tool} from '../../../Models/Tool'
 import type {Project} from '../../../Models/Project'
 import type {SocialLink} from '../../../Models/SocialLink'
 import type {GetInTouch} from '../../../Models/GetInTouch'
 import AboutMeComponent from '../Common/AboutMe/AboutMe'
-import SkillComponent from '../Common/Skill/Skill'
+import ToolboxComponent from '../Common/Toolbox/Toolbox'
 import ProjectComponent from '../Common/Project/Project'
 import SocialLinkComponent from '../Common/SocialLinks/SocialLink'
 import HeaderComponent from '../Common/Header/Header'
 import LoadingComponent from '../Common/Loading/Loading'
 import images from '../../../Utils/images'
+import SectionTitle from '../Common/SectionTitle/SectionTitle'
 
 
 type State = {
     aboutMe: AboutMe,
-    skills: Array<Skill>,
+    skills: Array<Tool>,
     projects: Array<Object>,
     socialLinks: Array<SocialLink>,
     getInTouch: GetInTouch,
@@ -37,12 +38,12 @@ type State = {
 class Page extends React.Component<State, any> {
     state = {
         aboutMe: {},
-        skills: [],
+        toolbox: [],
         projects: [],
         socialLinks: [],
         getInTouch: {},
         aboutMeLoaded: false,
-        skillsLoaded: false,
+        toolboxLoaded: false,
         projectsLoaded: false,
         socialLinksLoaded: false,
         getInTouchLoaded: false,
@@ -50,7 +51,7 @@ class Page extends React.Component<State, any> {
 
     componentDidMount() {
         this.makeRequest(getAboutMe, 'aboutMe')
-        this.makeRequest(getSkills, 'skills')
+        this.makeRequest(getToolbox, 'toolbox')
         this.makeRequest(getProjects, 'projects')
         this.makeRequest(getSocialLinks, 'socialLinks')
         this.makeRequest(getGetInTouch, 'getInTouch')
@@ -69,19 +70,19 @@ class Page extends React.Component<State, any> {
     render() {
         const {
             aboutMe,
-            skills,
+            toolbox,
             projects,
             socialLinks,
             getInTouch,
             aboutMeLoaded,
-            skillsLoaded,
+            toolboxLoaded,
             projectsLoaded,
             socialLinksLoaded,
             getInTouchLoaded,
         } = this.state
         if (
             aboutMeLoaded
-            && skillsLoaded
+            && toolboxLoaded
             && projectsLoaded
             && socialLinksLoaded
         //&& getInTouchLoaded
@@ -99,19 +100,29 @@ class Page extends React.Component<State, any> {
                                                   social={socialLinks}/>
                             ))}
                         </section>
-
-                        <section className="section section--skills" id="skills" ref={(section) => {
-                            this.Skills = section; //TODO: this is temporary, implement react-scroll
-                        }}>
-                            {skills.map((skill: Skill) => (
-                                <SkillComponent skill={skill} key={skill.name + skill.level}/>
-                            ))}
+                    </div>
+                    <SectionTitle title='Toolbox' image={images.toolboxPage}/>
+                    <div className="container">
+                        <section className="section">
+                            <div className="section-part-wrapper">
+                                <h1>Proficient at</h1>
+                                {toolbox.map((tool: Tool) => (
+                                    tool.level === 'proficient' &&
+                                    <ToolboxComponent icon={tool.slug} tool={tool} key={tool.name + tool.level}/>
+                                ))}
+                            </div>
+                            <div className="section-part-wrapper">
+                                <h1>Still learning</h1>
+                                {toolbox.map((tool: Tool) => (
+                                    tool.level === 'learning' &&
+                                    <ToolboxComponent icon={tool.slug} tool={tool} key={tool.name + tool.level}/>
+                                ))}
+                            </div>
                         </section>
-
-                        <section className="section projects" id="projects" ref={(section) => {
-                            this.Projects = section; //TODO: this is temporary, implement react-scroll
-                        }}
-                                 style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
+                    </div>
+                    <SectionTitle title='Projects' image={images.projectPage}/>
+                    <div className="container">
+                        <section className="section">
                             {projects.map((project: Project) => (
                                 <ProjectComponent project={project} key={project.title + project.type}/>
                             ))}

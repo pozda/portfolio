@@ -1,5 +1,5 @@
 // @flow
-import type {Skill} from './Skill'
+import type {Tool} from './Tool'
 export type Project = {
   title: string,
   goal: string,
@@ -7,6 +7,6 @@ export type Project = {
   role_description: string,
   type: string,
   link: string,
-  skills_and_tools: Array<Skill>,
+  skills_and_tools: Array<Tool>,
   learned: string
 }

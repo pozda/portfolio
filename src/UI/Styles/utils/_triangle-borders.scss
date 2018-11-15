@@ -1,0 +1,26 @@
+.triangle {
+  &-border {
+    position: relative;
+    border-color: transparent white;
+    border-style: solid;
+    z-index: 1;
+
+    &--small {
+      margin-top: 0px;
+    }
+
+    &--large {
+      margin-top: 280px;
+    }
+
+    &--bottom {
+      border-width: 10vw 0 0 0;
+      border-right-width: calc(100vw - 15px);
+    }
+
+    &--top {
+      border-width: 0 0 10vw 0;
+      border-left-width: calc(100vw - 15px);
+    }
+  }
+}

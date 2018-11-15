@@ -11,7 +11,7 @@ type State = {
     inverse: boolean
 }
 
-class BlogPost extends React.Component<Props, State> {
+class Header extends React.Component<Props, State> {
     state = {
         inverse: false
     };
@@ -52,10 +52,10 @@ class BlogPost extends React.Component<Props, State> {
                         </div>
                     </div>
                 </div>
-                <div className="header__border"></div>
+                <div className="triangle-border triangle-border--bottom triangle-border--large"></div>
             </header>
         )
     }
 }
 
-export default BlogPost
+export default Header
