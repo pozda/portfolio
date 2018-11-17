@@ -1,16 +1,8 @@
 .icon {
+  fill: $color-quinary;
   transition: $transition--primary;
   margin: 0 12px;
-  &--social {
-    fill: $color-primary;
-    &:hover {
-      fill: $color-tertiary
-    }
-  }
-  &--tools,
-  &--projects {
-    fill: $color-quinary;
-  }
+
   &--projects {
     margin: 0;
   }

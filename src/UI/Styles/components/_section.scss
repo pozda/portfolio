@@ -49,16 +49,15 @@
   &__title {
     color: $color-secondary;
   }
-  &__subtitle {}
+  &__subtitle {
+  }
   &__text {
     color: $color-primary;
   }
-  &__list {}
-  &__list-item {}
-  &__component {
-    &--about-me {}
-    &--skill {}
-    &--project {}
+  &--tools {
+    padding: 0 16px;
+    box-sizing: border-box;
+    text-align: left;
   }
 }
 

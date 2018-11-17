@@ -46,13 +46,13 @@ class Header extends React.Component<Props, State> {
                             </a>
                             <nav className="header__navigation">
                                 <a href="#aboutMe" className="header__navigation__item">About Me</a>
-                                <a href="#skills" className="header__navigation__item">Skills</a>
+                                <a href="#tools" className="header__navigation__item">Tools</a>
                                 <a href="#projects" className="header__navigation__item">Projects</a>
                             </nav>
                         </div>
                     </div>
                 </div>
-                <div className="triangle-border triangle-border--bottom triangle-border--large"></div>
+                <div className="triangle-border triangle-border--bottom triangle-border--large--top"></div>
             </header>
         )
     }

@@ -9,17 +9,33 @@
       margin-top: 0px;
     }
 
+    &--medium {
+      &--top {
+        margin-top: 50px;
+      }
+      &--bottom {
+        margin-bottom: 50px;
+      }
+    }
+
     &--large {
-      margin-top: 280px;
+      &--top {
+        margin-top: 280px;
+      }
+      &--bottom {
+        margin-bottom: 280px;
+      }
     }
 
     &--bottom {
-      border-width: 10vw 0 0 0;
+      border-width: $triangle-border-primary 0 0 0;
       border-right-width: calc(100vw - 15px);
+      &--footer {
+        opacity: 0.5;
+      }
     }
-
     &--top {
-      border-width: 0 0 10vw 0;
+      border-width: 0 0 $triangle-border-primary 0;
       border-left-width: calc(100vw - 15px);
     }
   }

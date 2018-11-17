@@ -18,12 +18,12 @@ class ProjectComponent extends React.Component<Props> {
                     <h1>{project.title}</h1>
                     <div dangerouslySetInnerHTML={{__html: project.goal}}/>
 
-                    <h3>I was {project.role} on project</h3>
+                    <h3>I was {project.role} on this project</h3>
                     <div dangerouslySetInnerHTML={{__html: project.role_description}}/>
                     <div dangerouslySetInnerHTML={{__html: project.learned}}/>
                     {
                         project.link &&
-                        <div>
+                        <div className="project__link">
                             <a href={project.link}>Checkout {project.title}</a>
                         </div>
                     }
@@ -32,7 +32,7 @@ class ProjectComponent extends React.Component<Props> {
 
                         {
                             tools.map((tool: Tool, index: number) =>
-                                <div className={`tool ${tool.slug}`} title={tool.description}>
+                                <div key={tool.name+index} className={`tool ${tool.slug}`} title={tool.description}>
                                     <Icon d={ICONS[tool.slug]} iconType={'icon--projects'} height={36}/>
                                     <p className="tool__name">{tool.name}</p>
                                 </div>

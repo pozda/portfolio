@@ -13,7 +13,7 @@ class ToolboxComponent extends React.Component<Props> {
         return (
             <React.Fragment>
                   <div className={`tool ${tool.slug}`} title={tool.description}>
-                      <Icon d={ICONS[tool.slug]} iconType={'icon--tools'} height={36} />
+                      <Icon d={ICONS[tool.slug]} height={36} />
                       <p className="tool__name">{tool.name}</p>
                   </div>
             </React.Fragment>

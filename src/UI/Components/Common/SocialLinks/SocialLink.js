@@ -13,8 +13,8 @@ class SocialLinkComponent extends React.Component<Props> {
 
         return (
             <React.Fragment>
-                <a href={socialLink.link} target="_blank" alt={socialLink.network} title={socialLink.network}>
-                    <Icon d={ICONS[socialLink.network]} height={24} iconType="icon--social" iconClass={socialLink.network} />
+                <a href={socialLink.link} className={socialLink.network} target="_blank" alt={socialLink.network} title={socialLink.network}>
+                    <Icon d={ICONS[socialLink.network]} height={24} iconClass={socialLink.network} />
                 </a>
             </React.Fragment>
         )
