@@ -92,8 +92,8 @@ class Page extends React.Component<State, any> {
                 <div>
                     <HeaderComponent image={images.headerPage} logo={images.logo}/>
 
-                    <div className="container">
-                        <section className="section section--about-me" id="aboutMe" ref={(section) => {
+                    <div className="container" id="aboutMe">
+                        <section className="section section--about-me" ref={(section) => {
                             this.AboutMe = section; //TODO: this is temporary, implement react-scroll
                         }}>
                             {aboutMe.map((about: AboutMe) => (
@@ -102,7 +102,7 @@ class Page extends React.Component<State, any> {
                             ))}
                         </section>
                     </div>
-                    <SectionTitle title='Toolbox' image={images.toolboxPage}/>
+                    <SectionTitle id='tools' title='Toolbox' image={images.toolboxPage}/>
                     <div className="container">
                         <section className="section section--tools">
                             <div className="section-part-wrapper">
@@ -121,7 +121,7 @@ class Page extends React.Component<State, any> {
                             </div>
                         </section>
                     </div>
-                    <SectionTitle title='Projects' image={images.projectPage}/>
+                    <SectionTitle id='projects' title='Projects' image={images.projectPage}/>
                     <div className="container">
                         <section className="section">
                             {projects.map((project: Project) => (

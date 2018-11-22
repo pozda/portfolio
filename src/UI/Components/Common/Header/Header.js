@@ -1,6 +1,8 @@
 // @flow
 import * as React from 'react'
 import cx from 'classnames'
+import * as Scroll from 'react-scroll'
+import {Link} from "react-router";
 
 type Props = {
     image: string,
@@ -46,7 +48,7 @@ class Header extends React.Component<Props, State> {
                             </a>
                             <nav className="header__navigation">
                                 <a href="#aboutMe" className="header__navigation__item">About Me</a>
-                                <a href="#tools" className="header__navigation__item">Tools</a>
+                                <a href="#tools" className="header__navigation__item">My Toolbox</a>
                                 <a href="#projects" className="header__navigation__item">Projects</a>
                             </nav>
                         </div>

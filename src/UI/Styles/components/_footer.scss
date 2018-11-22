@@ -4,7 +4,7 @@
     color: white;
     padding: 6px 12px;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba($color-primary, 0.5);
     max-width: 220px;
   }
   &__copy {

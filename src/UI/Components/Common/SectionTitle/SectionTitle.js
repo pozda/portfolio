@@ -2,14 +2,15 @@
 import * as React from 'react'
 type Props = {
     title: string,
-    image: string
+    image: string,
+    id: string
 }
 
 class SectionTitle extends React.Component<Props> {
     render() {
-        const { title, image } = this.props
+        const { title, image, id } = this.props
         return (
-            <div className="section-main-title__wrapper" style={{backgroundImage:`url(${image})`}}>
+            <div id={id} className="section-main-title__wrapper" style={{backgroundImage:`url(${image})`}}>
                 <div className="triangle-border triangle-border--top triangle-border--small"></div>
                 <h1 className="section-main-title">{title}</h1>
                 <div className="section-main-title__underline"></div>
