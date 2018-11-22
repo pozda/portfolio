@@ -44,10 +44,12 @@
     transition: $transition--primary;
     &__item {
       display: inline-block;
-      padding: 16px 8px;
+      padding: 16px 8px 11px;
       color: white;
       text-decoration: none;
+      border-bottom: 5px solid transparent;
       transition: $transition--primary;
+      cursor: pointer;
       @include breakpoint('mobile') {
         padding: 16px;
       }
@@ -56,6 +58,9 @@
       &:active {
         color: white;
         background-color: $color-quaternary;
+      }
+      &.active {
+        border-color: $color-quaternary;
       }
     }
   }
