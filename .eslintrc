@@ -15,7 +15,12 @@
   "settings": {
     "react": {
       "version": "16.4.2",
-      "flowVersion": "0.77.0"
+      "flowVersion": "0.77.0",
+      "import/resolver": {
+        "node": {
+          "moduleDirectory": ["node_modules", "src/"]
+        }
+      }
     }
   },
   "parser": "babel-eslint",

@@ -35,8 +35,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "eslint-config-google": "^0.10.0",
+    "eslint-plugin-import": "^2.14.0",
     "flow-bin": "^0.83.0",
-    "flow-typed": "^2.5.1",
-    "eslint-config-google": "^0.10.0"
+    "flow-typed": "^2.5.1"
   }
 }
