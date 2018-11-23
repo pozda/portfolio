@@ -1,8 +1,12 @@
 // @flow
 import * as React from 'react'
-import './UI/Styles/Main.scss'
+import 'UI/Styles/Main.scss'
 
-class App extends React.Component<any> {
+type Props = {
+    children: ?React.Node
+}
+
+class App extends React.Component<Props> {
     render() {
         return (
             <React.Fragment>

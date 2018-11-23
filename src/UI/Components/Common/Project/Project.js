@@ -2,7 +2,7 @@
 import * as React from 'react'
 import type {Project} from 'Models/Project'
 import type {Tool} from 'Models/Tool'
-import {Icon, ICONS} from "../Icon/Icon";
+import {Icon, ICONS} from 'UI/Components/Common/Icon/Icon'
 
 type Props = {
     project: Project
@@ -29,7 +29,6 @@ class ProjectComponent extends React.Component<Props> {
                     }
                     <div>
                         <h3>Tools I used on this project:</h3>
-
                         {
                             tools.map((tool: Tool, index: number) =>
                                 <div key={tool.name+index} className={`tool ${tool.slug}`} title={tool.description}>
@@ -44,5 +43,4 @@ class ProjectComponent extends React.Component<Props> {
         )
     }
 }
-
 export default ProjectComponent

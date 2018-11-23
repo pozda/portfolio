@@ -1,0 +1,5 @@
+**/interfaces/*
+**/node_modules/*
+**/flow-typed/*
+**/webpack.config*.js
+**/build/*

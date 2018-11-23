@@ -5,22 +5,21 @@ import {
     getToolbox,
     getProjects,
     getSocialLinks,
-    getGetInTouch,
-} from '../../../Requests/Requests'
-import type {AboutMe} from '../../../Models/AboutMe'
-import type {Tool} from '../../../Models/Tool'
-import type {Project} from '../../../Models/Project'
-import type {SocialLink} from '../../../Models/SocialLink'
-import type {GetInTouch} from '../../../Models/GetInTouch'
-import AboutMeComponent from '../Common/AboutMe/AboutMe'
-import ToolboxComponent from '../Common/Toolbox/Toolbox'
-import ProjectComponent from '../Common/Project/Project'
-import HeaderComponent from '../Common/Header/Header'
-import LoadingComponent from '../Common/Loading/Loading'
-import images from '../../../Utils/images'
-import SectionTitle from '../Common/SectionTitle/SectionTitle'
-import appConstants from "../../../Utils/appConstants"
-import Footer from "../Common/Footer/Footer"
+    getGetInTouch
+} from 'Requests/Requests'
+import type {AboutMe} from 'Models/AboutMe'
+import type {Tool} from 'Models/Tool'
+import type {Project} from 'Models/Project'
+import type {SocialLink} from 'Models/SocialLink'
+import AboutMeComponent from 'UI/Components/Common/AboutMe/AboutMe'
+import ToolboxComponent from 'UI/Components/Common/Toolbox/Toolbox'
+import ProjectComponent from 'UI/Components/Common/Project/Project'
+import HeaderComponent from 'UI/Components/Common/Header/Header'
+import LoadingComponent from 'UI/Components/Common/Loading/Loading'
+import images from 'Utils/images'
+import SectionTitle from 'UI/Components/Common/SectionTitle/SectionTitle'
+import appConstants from 'Utils/appConstants'
+import Footer from 'UI/Components/Common/Footer/Footer'
 import {Element} from 'react-scroll'
 
 
@@ -37,7 +36,7 @@ type State = {
     getInTouchLoaded: boolean
 }
 
-class Page extends React.Component<State, any> {
+class Page extends React.Component<State> {
     state = {
         aboutMe: {},
         toolbox: [],
@@ -48,7 +47,7 @@ class Page extends React.Component<State, any> {
         toolboxLoaded: false,
         projectsLoaded: false,
         socialLinksLoaded: false,
-        getInTouchLoaded: false,
+        getInTouchLoaded: false
     }
 
     componentDidMount() {
@@ -61,10 +60,10 @@ class Page extends React.Component<State, any> {
 
     makeRequest = (request: Function, stateName: string) => {
         const loaded = stateName + 'Loaded'
-        request.then((resp) => {
+        request.then((resp: Object) => {
             this.setState({
                 ...resp.data.data,
-                [loaded]: true,
+                [loaded]: true
             })
         })
     }
@@ -75,32 +74,29 @@ class Page extends React.Component<State, any> {
             toolbox,
             projects,
             socialLinks,
-            getInTouch,
             aboutMeLoaded,
             toolboxLoaded,
             projectsLoaded,
-            socialLinksLoaded,
-            getInTouchLoaded,
+            socialLinksLoaded
         } = this.state
         if (
             aboutMeLoaded
             && toolboxLoaded
             && projectsLoaded
             && socialLinksLoaded
-        //&& getInTouchLoaded
         ) {
             return (
-
                 <div>
                     <HeaderComponent image={images.headerPage} logo={images.logo}/>
                     <Element name="aboutMe">
                         <div className="container" id="aboutMe">
-                            <section className="section section--about-me" ref={(section) => {
-                                this.AboutMe = section; //TODO: this is temporary, implement react-scroll
-                            }}>
+                            <section className="section section--about-me">
                                 {aboutMe.map((about: AboutMe) => (
-                                    <AboutMeComponent about={about} key={about.title} image={about.image}
-                                                      social={socialLinks}/>
+                                    <AboutMeComponent
+                                        about={about}
+                                        key={about.title}
+                                        image={about.image}
+                                        social={socialLinks}/>
                                 ))}
                             </section>
                         </div>

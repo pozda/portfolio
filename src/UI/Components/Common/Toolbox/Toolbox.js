@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react'
-import type {Tool} from '../../../../Models/Tool'
-import {Icon, ICONS} from "../Icon/Icon";
+import type {Tool} from 'Models/Tool'
+import {Icon, ICONS} from 'UI/Components/Common/Icon/Icon'
 
 type Props = {
     tool: Tool
@@ -12,12 +12,13 @@ class ToolboxComponent extends React.Component<Props> {
         const {tool} = this.props
         return (
             <React.Fragment>
-                  <div className={`tool ${tool.slug}`} title={tool.description}>
-                      <Icon d={ICONS[tool.slug]} height={36} />
-                      <p className="tool__name">{tool.name}</p>
-                  </div>
+                <div className={`tool ${tool.slug}`} title={tool.description}>
+                    <Icon d={ICONS[tool.slug]} height={36}/>
+                    <p className="tool__name">{tool.name}</p>
+                </div>
             </React.Fragment>
         )
     }
 }
+
 export default ToolboxComponent
