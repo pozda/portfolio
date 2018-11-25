@@ -1,4 +1,7 @@
 .footer {
+  background: no-repeat center fixed;
+  background-size: cover;
+  position: relative;
   &__title {
     display: block;
     color: white;

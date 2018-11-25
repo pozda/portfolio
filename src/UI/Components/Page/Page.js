@@ -87,7 +87,7 @@ class Page extends React.Component<State> {
         ) {
             return (
                 <div>
-                    <HeaderComponent image={images.headerPage} logo={images.logo}/>
+                    <HeaderComponent image={images.headerImg}/>
                     <Element name="aboutMe">
                         <div className="container" id="aboutMe">
                             <section className="section section--about-me">
@@ -102,7 +102,7 @@ class Page extends React.Component<State> {
                         </div>
                     </Element>
                     <Element name="myToolbox">
-                        <SectionTitle id='myToolbox' title='Toolbox' image={images.toolboxPage}/>
+                        <SectionTitle id='myToolbox' title='Toolbox' image={images.toolboxImg}/>
                         <div className="container">
                             <section className="section section--tools">
                                 <div className="section-part-wrapper">
@@ -123,7 +123,7 @@ class Page extends React.Component<State> {
                         </div>
                     </Element>
                     <Element name="projects">
-                        <SectionTitle id='projects' title='Projects' image={images.projectPage}/>
+                        <SectionTitle id='projects' title='Projects' image={images.projectImg}/>
                         <div className="container">
                             <section className="section">
                                 {projects.map((project: Project) => (

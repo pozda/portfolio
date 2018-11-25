@@ -1,6 +1,7 @@
 import * as React from 'react'
 import type {SocialLink} from 'Models/SocialLink'
 import SocialLinkComponent from 'UI/Components/Common/SocialLinks/SocialLink'
+import images from 'Utils/images'
 
 type Props = {
     socialLinks: Array<SocialLink>
@@ -10,10 +11,7 @@ class Footer extends React.Component<Props> {
     render() {
         const {socialLinks} = this.props
         return (
-            <footer style={{
-                background: 'url(https://cdn.buttercms.com/mOFmtkT3Tz2OnLhZtl1w) no-repeat center fixed',
-                backgroundSize: 'cover', position: 'relative'
-            }}>
+            <footer className="footer" style={{backgroundImage: `url(${images.footerImg})`}}>
                 <div className="triangle-border triangle-border--top triangle-border--medium--bottom"/>
                 <h1 className="footer__title">*web developer</h1>
                 <div

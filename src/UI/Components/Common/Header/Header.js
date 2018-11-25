@@ -4,8 +4,7 @@ import cx from 'classnames'
 import {Link} from 'react-scroll'
 
 type Props = {
-    image: string,
-    logo: string
+    image: string
 }
 
 type State = {
