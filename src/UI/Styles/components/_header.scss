@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: no-repeat center;
+  background: no-repeat;
   background-size: cover;
+  background-position-y: 30%;
   &__navbar {
     position: fixed;
     z-index: 2;
