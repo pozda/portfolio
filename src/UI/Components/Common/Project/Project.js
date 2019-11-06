@@ -18,7 +18,7 @@ class ProjectComponent extends React.Component<Props> {
                     <h1>{project.title}</h1>
                     <div dangerouslySetInnerHTML={{__html: project.goal}}/>
 
-                    <h3>I was {project.role} on this project</h3>
+                    <h3>My role on this project: {project.role}</h3>
                     <div dangerouslySetInnerHTML={{__html: project.role_description}}/>
                     <div dangerouslySetInnerHTML={{__html: project.learned}}/>
                     {

@@ -12,6 +12,11 @@
       fill: $color-javascript
     }
   }
+  &.typescript {
+    &:hover .icon {
+      fill: $color-typescript
+    }
+  }
   &.html5 {
     &:hover .icon {
       fill: $color-html5
