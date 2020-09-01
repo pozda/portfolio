@@ -4,8 +4,7 @@ import {
     getAboutMe,
     getToolbox,
     getProjects,
-    getSocialLinks,
-    getGetInTouch
+    getSocialLinks
 } from 'Requests/Requests'
 import type {AboutMe} from 'Models/AboutMe'
 import type {Tool} from 'Models/Tool'
@@ -28,26 +27,22 @@ type State = {
     skills: Array<Tool>,
     projects: Array<Object>,
     socialLinks: Array<SocialLink>,
-    getInTouch: GetInTouch,
     aboutMeLoaded: boolean,
     skillsLoaded: boolean,
     projectsLoaded: boolean,
-    socialLinksLoaded: boolean,
-    getInTouchLoaded: boolean
+    socialLinksLoaded: boolean
 }
 
 class Page extends React.Component<State> {
     state = {
-        aboutMe: {},
+        aboutMe: [],
         toolbox: [],
         projects: [],
         socialLinks: [],
-        getInTouch: {},
         aboutMeLoaded: false,
         toolboxLoaded: false,
         projectsLoaded: false,
-        socialLinksLoaded: false,
-        getInTouchLoaded: false
+        socialLinksLoaded: false
     }
 
     componentDidMount() {
@@ -55,7 +50,6 @@ class Page extends React.Component<State> {
         this.makeRequest(getToolbox, 'toolbox')
         this.makeRequest(getProjects, 'projects')
         this.makeRequest(getSocialLinks, 'socialLinks')
-        this.makeRequest(getGetInTouch, 'getInTouch')
     }
 
     makeRequest = (request: Function, stateName: string) => {
